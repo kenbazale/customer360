@@ -1,0 +1,10 @@
+**/.dlt/secrets.toml
+**/.dlt/*.duckdb
+*.duckdb
+__pycache__/
+*.pyc
+venv/
+generator/*.csv
+secrets.toml
+**/.dlt/config.toml
+*:Zone.Identifier
