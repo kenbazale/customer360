@@ -1,0 +1,112 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Cleaned customer records, one row per customer.
+    columns:
+      - name: customer_id
+        description: Primary key. Some source rows have null or duplicate IDs by design.
+        tests:
+          - not_null:
+              config:
+                severity: warn
+          - unique:
+              config:
+                severity: warn
+      - name: kyc_status
+        tests:
+          - accepted_values:
+              values: ['complete', 'pending', 'expired']
+              config:
+                severity: warn
+      - name: branch_code
+        tests:
+          - accepted_values:
+              values: [
+                'BR001','BR002','BR003','BR004','BR005','BR006','BR007','BR008','BR009','BR010',
+                'BR011','BR012','BR013','BR014','BR015','BR016','BR017','BR018','BR019','BR020',
+                'BR021','BR022','BR023','BR024','BR025','BR026','BR027','BR028','BR029','BR030',
+                'BR031','BR032','BR033','BR034','BR035','BR036','BR037','BR038','BR039','BR040',
+                'BR041','BR042','BR043','BR044','BR045','BR046','BR047','BR048','BR049','BR050',
+                'BR051','BR052','BR053','BR054','BR055','BR056','BR057','BR058','BR059','BR060'
+              ]
+              config:
+                severity: warn
+
+  - name: stg_accounts
+    description: Cleaned account records, one row per account.
+    columns:
+      - name: account_id
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: customer_id
+        tests:
+          - not_null:
+              config:
+                severity: warn
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+              config:
+                severity: warn
+      - name: account_type
+        tests:
+          - accepted_values:
+              values: ['savings', 'current', 'loan']
+              config:
+                severity: warn
+      - name: balance
+        tests:
+          - not_null:
+              config:
+                severity: warn
+
+  - name: stg_card_transactions
+    description: Cleaned card transaction records.
+    columns:
+      - name: txn_id
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: account_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_accounts')
+                field: account_id
+              config:
+                severity: warn
+      - name: amount
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+              config:
+                severity: warn
+
+  - name: stg_digital_events
+    description: Cleaned digital channel event records.
+    columns:
+      - name: event_id
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+              config:
+                severity: warn
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ['login', 'transfer', 'bill_pay']
+              config:
+                severity: warn

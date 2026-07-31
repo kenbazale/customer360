@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    database: customer360
+    schema: raw
+    description: >
+      Raw banking extract tables loaded from S3 (originally landed there by
+      the dlt ingestion pipeline). Data here is intentionally unclean —
+      nulls, orphaned foreign keys, invalid categories, future dates — since
+      this mirrors what a real core banking extract looks like before any
+      quality gates are applied.
+    tables:
+      - name: customers
+        description: Customer Information File (CIF) style extract.
+      - name: accounts
+        description: Savings, current, and loan accounts linked to customers.
+      - name: card_transactions
+        description: ATM/POS card transactions linked to accounts.
+      - name: digital_events
+        description: Mobile/web banking login, transfer, and bill pay events.
