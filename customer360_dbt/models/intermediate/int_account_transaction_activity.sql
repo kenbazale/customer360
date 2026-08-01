@@ -12,7 +12,7 @@ aggregated as (
     select
         account_id,
         count(*)  as txn_count_12m,
-        sum(case when is_approved thenamount else 0 end) as total_spend_12m,
+        sum(case when is_approved then amount else 0 end) as total_spend_12m,
         max(txn_datetime)  as last_txn_date,
         datediff('day', max(txn_datetime), current_date) as days_since_last_txn
     from transactions
