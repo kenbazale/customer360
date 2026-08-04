@@ -1,0 +1,13 @@
+customer360_dbt:
+  outputs:
+    dev:
+      account: your_account.region
+      database: customer360
+      password: your_password
+      role: ACCOUNTADMIN
+      schema: staging
+      threads: 4
+      type: snowflake
+      user: YOUR_USER
+      warehouse: compute_wh
+  target: dev

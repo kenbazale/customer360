@@ -8,3 +8,10 @@ generator/*.csv
 secrets.toml
 **/.dlt/config.toml
 *:Zone.Identifier
+airflow/dbt_profiles/profiles.yml
+# Airflow
+airflow/logs/
+airflow/.airflowignore
+airflow/airflow.db
+airflow/standalone_admin_password.txt
+airflow/webserver_config.py

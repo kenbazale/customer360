@@ -1,0 +1,88 @@
+# Single-node Airflow setup for local orchestration of the Customer 360
+# pipeline. Deliberately trimmed from Airflow's official multi-service
+# quickstart (no Celery/Redis/Flower) — LocalExecutor is plenty for a
+# portfolio project running one DAG on one machine.
+#
+# Usage:
+#   docker compose up airflow-init   # one-time DB init, first run only
+#   docker compose up                # start webserver + scheduler
+#   Then open http://localhost:8080  (user: airflow / pass: airflow)
+
+x-airflow-common: &airflow-common
+  build: .
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    DBT_PROFILES_DIR: /opt/project/dbt_profiles
+    DBT_LOG_PATH: /tmp/dbt_logs
+    DBT_TARGET_PATH: /tmp/dbt_target
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    # Mount the actual project code so DAG tasks can call these scripts.
+    # Adjust the left-hand host paths if your project lives somewhere else.
+    - ../generator:/opt/project/generator
+    - ../ingestion:/opt/project/ingestion
+    - ../quality:/opt/project/quality
+    - ../customer360_dbt:/opt/project/dbt
+    # dbt profiles live in ./dbt_profiles/ (gitignored). Copy
+    # dbt_profiles/profiles.yml.example to profiles.yml and fill in credentials.
+    - ./dbt_profiles:/opt/project/dbt_profiles:ro
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on: &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+    restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        airflow db migrate
+        airflow users create \
+          --username airflow --password airflow \
+          --firstname Ken --lastname Bazale \
+          --role Admin --email admin@example.com
+    environment:
+      <<: *airflow-common-env
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+volumes:
+  postgres-db-volume:

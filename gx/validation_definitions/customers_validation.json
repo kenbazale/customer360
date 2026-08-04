@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "0d8f8afa-d608-49ed-b112-6aaef9e6088d",
+      "name": "customers"
+    },
+    "batch_definition": {
+      "id": "5c2fc13f-607a-459d-9952-6db3a953fce0",
+      "name": "customers_batch"
+    },
+    "datasource": {
+      "id": "7894d3d6-1dc8-4d44-958e-67840979a807",
+      "name": "customers_source"
+    }
+  },
+  "id": "5f47fc0d-4f0a-43e4-a258-c965a7ade5b2",
+  "name": "customers_validation",
+  "suite": {
+    "id": "4dcb5206-23d1-42c6-8fdb-f410eb71d661",
+    "name": "customers_suite"
+  }
+}

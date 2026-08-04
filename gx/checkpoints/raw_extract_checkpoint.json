@@ -1,0 +1,30 @@
+{
+  "actions": [
+    {
+      "name": "update_data_docs",
+      "site_names": [],
+      "type": "update_data_docs"
+    }
+  ],
+  "id": "c7b7c9fb-aabe-46c8-baa9-996d7441a769",
+  "name": "raw_extract_checkpoint",
+  "result_format": "SUMMARY",
+  "validation_definitions": [
+    {
+      "id": "5f47fc0d-4f0a-43e4-a258-c965a7ade5b2",
+      "name": "customers_validation"
+    },
+    {
+      "id": "e15c59ed-2c91-44b7-9b48-a007d62a26e1",
+      "name": "accounts_validation"
+    },
+    {
+      "id": "65e7d62f-d7e4-43bc-af74-ed98f1d0dc40",
+      "name": "card_transactions_validation"
+    },
+    {
+      "id": "fe6e23b2-6408-4211-a227-b4cd3bdc93b8",
+      "name": "digital_events_validation"
+    }
+  ]
+}

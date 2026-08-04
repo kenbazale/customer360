@@ -1,0 +1,44 @@
+{
+  "expectations": [
+    {
+      "id": "cec4d460-f017-4176-a39a-890bab86dad5",
+      "kwargs": {
+        "column": "account_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "ff559ff0-bb89-488d-bac2-5db6961090d1",
+      "kwargs": {
+        "column": "account_type",
+        "value_set": [
+          "savings",
+          "current",
+          "loan"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_distinct_values_to_be_in_set"
+    },
+    {
+      "id": "f05c09a4-7489-4b83-895f-55ae864b06c2",
+      "kwargs": {
+        "column": "balance",
+        "max_value": 200000.0,
+        "min_value": -1000.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "71083b96-9756-4f73-88af-c77141f450ec",
+  "meta": {
+    "great_expectations_version": "1.19.1"
+  },
+  "name": "accounts_suite",
+  "notes": null
+}

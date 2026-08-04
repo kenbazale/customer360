@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "id": "ae910e80-afaf-4951-9705-e668283282e8",
+      "kwargs": {
+        "column": "event_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "22e06be3-88d3-47bd-97f7-ea9fd48cf721",
+      "kwargs": {
+        "column": "event_type",
+        "value_set": [
+          "login",
+          "transfer",
+          "bill_pay"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_distinct_values_to_be_in_set"
+    }
+  ],
+  "id": "bb548eb8-52c9-4a4d-89e5-db24666fd2c7",
+  "meta": {
+    "great_expectations_version": "1.19.1"
+  },
+  "name": "digital_events_suite",
+  "notes": null
+}

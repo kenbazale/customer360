@@ -17,7 +17,7 @@ import dlt
 import pandas as pd
 
 
-SOURCE_DIR = "/home/claude/customer360/generator/"
+SOURCE_DIR = SOURCE_DIR = "/opt/project/generator"
  
 # Raw landing zone intentionally has NO primary key / not-null enforcement.
 # Source data is dirty by nature (nulls, dupes, orphaned FKs) — that's the

@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "dfc309be-54db-4690-91af-e0b8c609c82f",
+      "name": "card_transactions"
+    },
+    "batch_definition": {
+      "id": "4fc98315-b894-4cd0-8c80-8858064aeaf7",
+      "name": "card_transactions_batch"
+    },
+    "datasource": {
+      "id": "f08ce18e-984f-4af3-ba77-17f97f223252",
+      "name": "card_transactions_source"
+    }
+  },
+  "id": "65e7d62f-d7e4-43bc-af74-ed98f1d0dc40",
+  "name": "card_transactions_validation",
+  "suite": {
+    "id": "272f0d57-283c-48f5-8ba8-2dacf740fd9b",
+    "name": "card_transactions_suite"
+  }
+}
