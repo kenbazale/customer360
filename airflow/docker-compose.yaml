@@ -19,6 +19,7 @@ x-airflow-common: &airflow-common
     DBT_PROFILES_DIR: /opt/project/dbt_profiles
     DBT_LOG_PATH: /tmp/dbt_logs
     DBT_TARGET_PATH: /tmp/dbt_target
+    CUSTOMER360_SOURCE_DIR: /opt/project/generator
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs

@@ -7,7 +7,7 @@ venv/
 generator/*.csv
 secrets.toml
 **/.dlt/config.toml
-*:Zone.Identifier
+*Zone.Identifier
 airflow/dbt_profiles/profiles.yml
 # Airflow
 airflow/logs/
@@ -15,3 +15,13 @@ airflow/.airflowignore
 airflow/airflow.db
 airflow/standalone_admin_password.txt
 airflow/webserver_config.py
+
+# Terraform state - contains resource details, should not be committed
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Environment-specific values - not secret exactly, but no reason to
+# publish them in a public repo
+terraform.tfvars
