@@ -1,0 +1,19 @@
+# dlt configuration for customer360 pipeline
+# Reduces timeout durations for faster failure detection on S3 connectivity issues
+
+[s3]
+# AWS SDK timeout settings (in seconds)
+# connect_timeout = 10  # Timeout for establishing connection
+# read_timeout = 30     # Timeout for reading data
+
+[filesystem]
+# Filesystem destination settings
+# bucket_url can be set here or via environment variable
+
+[normalize]
+# Parallel workers for normalization (adjust based on container resources)
+workers = 2
+
+[load]
+# Parallel workers for loading (adjust based on S3 connection)
+workers = 2

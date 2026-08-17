@@ -6,7 +6,9 @@ FROM apache/airflow:2.9.3-python3.12
 
 USER airflow
 
-RUN pip install --no-cache-dir\
+RUN pip install --no-cache-dir \
     "dlt[filesystem,s3,parquet]" \
     great_expectations \
-    dbt-snowflake
+    dbt-snowflake \
+    pyyaml \
+    requests

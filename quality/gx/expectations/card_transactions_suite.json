@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "3b53fd36-9203-4084-92fb-e31beede7f85",
+      "id": "494c2873-a177-4990-9b00-4982313871ee",
       "kwargs": {
         "column": "txn_id"
       },
@@ -10,7 +10,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "7894769b-b347-4c59-994d-6f1706b4da5e",
+      "id": "115c7857-ae95-44f9-9af4-8b99738d41c7",
       "kwargs": {
         "column": "amount",
         "max_value": 10000.0,
@@ -21,7 +21,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "88f5cb43-2671-4e3a-89e4-549483f25fa9",
+      "id": "2563f438-7765-4a27-b55c-07d3168fc152",
       "kwargs": {
         "column": "response_code",
         "value_set": [
@@ -38,9 +38,9 @@
       "type": "expect_column_distinct_values_to_be_in_set"
     }
   ],
-  "id": "edac27e3-4ef9-4fca-b9d4-46716f9924ec",
+  "id": "88bbe2ba-d2d3-403b-9477-3e52121d227a",
   "meta": {
-    "great_expectations_version": "1.19.1"
+    "great_expectations_version": "1.20.0"
   },
   "name": "card_transactions_suite",
   "notes": null

@@ -6,24 +6,24 @@
       "type": "update_data_docs"
     }
   ],
-  "id": "e4544d80-89e3-4aa6-b43d-ab08715ee8c7",
+  "id": "cfb94633-03cb-4e51-a8b1-8ac7b8b28732",
   "name": "raw_extract_checkpoint",
   "result_format": "SUMMARY",
   "validation_definitions": [
     {
-      "id": "42ea308c-cac7-42f2-95da-ae0b68698d8c",
+      "id": "4c7224e3-d065-456a-bf2f-41d64d168851",
       "name": "customers_validation"
     },
     {
-      "id": "1ecccd3e-9d7f-4749-b8c5-decd0babf89b",
+      "id": "5e454bf7-cb1b-42b8-9afe-040fda760006",
       "name": "accounts_validation"
     },
     {
-      "id": "c1a818c6-a553-4132-a2f6-5bd73352d1e9",
+      "id": "8d61bca4-d4c6-4e5c-9c5d-b78130153800",
       "name": "card_transactions_validation"
     },
     {
-      "id": "48549807-c41c-4f5d-ae47-9aab4337b03c",
+      "id": "55e4b032-8689-435b-b477-40844bbd7209",
       "name": "digital_events_validation"
     }
   ]

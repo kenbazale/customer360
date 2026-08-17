@@ -83,51 +83,51 @@ data_docs_sites:
 fluent_datasources:
   customers_source:
     type: pandas
-    id: d1633eb2-419c-46ad-86e3-e275480104c8
+    id: 903177a8-9e14-43d2-a210-c2d96239f097
     assets:
       customers:
         type: dataframe
-        id: 39a0069f-b1cb-4d43-a2c0-b0cf967344d3
+        id: 42100abd-1f8a-4703-b5f5-957fe10b0c54
         batch_metadata: {}
         batch_definitions:
           customers_batch:
-            id: 9de8c39e-6e5b-4b42-80ba-87ac9245b206
+            id: 5eddfdaa-8ae6-4c43-a89a-ece34e778100
             partitioner:
   accounts_source:
     type: pandas
-    id: 912a3231-d54a-4656-a12c-52732b2ceed1
+    id: a2f319e4-58a3-49a7-808a-45276dec7574
     assets:
       accounts:
         type: dataframe
-        id: 60b9ed96-2363-4b4e-87f5-5d368152a40f
+        id: 8d80af24-8cda-4e32-be36-3af0646ed9b8
         batch_metadata: {}
         batch_definitions:
           accounts_batch:
-            id: dcda2834-b421-43aa-95e0-374ca6584477
+            id: 88132d97-ee8f-4831-ad96-cd06809b3b3d
             partitioner:
   card_transactions_source:
     type: pandas
-    id: d50c74f5-7232-4fab-8387-9609002269f4
+    id: 8b38c3b9-7a67-4f28-b79f-b3054707b60d
     assets:
       card_transactions:
         type: dataframe
-        id: 1f1d248a-a755-4fc1-a778-bbe1b4168bfc
+        id: 1f33dcb6-397d-4dbc-bd10-2849bffad1ca
         batch_metadata: {}
         batch_definitions:
           card_transactions_batch:
-            id: ebddef42-e462-44a2-9552-a59a8a0aa877
+            id: bca6028e-27ac-40a0-b5c2-ef7a959c34e8
             partitioner:
   digital_events_source:
     type: pandas
-    id: d907953b-4a63-42bb-95f2-a4b81686074e
+    id: 5bd6e105-86e5-4821-a4b0-181493858db9
     assets:
       digital_events:
         type: dataframe
-        id: ed9de4fe-6d82-4ef7-a4c1-f22be9a1cfcb
+        id: 267cee2d-c718-4c78-9364-88bc6e6bee88
         batch_metadata: {}
         batch_definitions:
           digital_events_batch:
-            id: d2745507-b244-4584-853c-c18fc3afc338
+            id: 6b5fc6e3-8e65-4e85-abb2-fbca811544ac
             partitioner:
 analytics_enabled:
 data_context_id: ab825821-e58c-4b9e-892a-44330c7d08b1

@@ -22,7 +22,7 @@ x-airflow-common: &airflow-common
     CUSTOMER360_SOURCE_DIR: /opt/project/generator
   volumes:
     - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
+    - airflow-logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
     # Mount the actual project code so DAG tasks can call these scripts.
     # Adjust the left-hand host paths if your project lives somewhere else.
@@ -87,3 +87,4 @@ services:
 
 volumes:
   postgres-db-volume:
+  airflow-logs:

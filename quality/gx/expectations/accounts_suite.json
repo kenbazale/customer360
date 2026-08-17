@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "82c2d1e0-957e-4e10-ab14-a595d34bfbc3",
+      "id": "b047a433-4f2d-4aaa-8761-fb126d7fbbb3",
       "kwargs": {
         "column": "account_id"
       },
@@ -10,7 +10,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "31e63c15-9168-47ce-bf29-d14eeebc4dfb",
+      "id": "e3f0d871-fd5e-482a-a8ec-18e29f94a3be",
       "kwargs": {
         "column": "account_type",
         "value_set": [
@@ -24,7 +24,7 @@
       "type": "expect_column_distinct_values_to_be_in_set"
     },
     {
-      "id": "68bf0a9f-0835-40bd-9d18-0d5fe5ba22d6",
+      "id": "8053a2ae-6cf2-4dc6-9c3c-6a11b6d8a724",
       "kwargs": {
         "column": "balance",
         "max_value": 200000.0,
@@ -35,9 +35,9 @@
       "type": "expect_column_values_to_be_between"
     }
   ],
-  "id": "c5fc2d6d-7bc2-4206-8065-a9043b466fbb",
+  "id": "c140f9df-c277-4d6d-baa3-060f440e7d2c",
   "meta": {
-    "great_expectations_version": "1.19.1"
+    "great_expectations_version": "1.20.0"
   },
   "name": "accounts_suite",
   "notes": null

@@ -1,22 +1,22 @@
 {
   "data": {
     "asset": {
-      "id": "ed9de4fe-6d82-4ef7-a4c1-f22be9a1cfcb",
+      "id": "267cee2d-c718-4c78-9364-88bc6e6bee88",
       "name": "digital_events"
     },
     "batch_definition": {
-      "id": "d2745507-b244-4584-853c-c18fc3afc338",
+      "id": "6b5fc6e3-8e65-4e85-abb2-fbca811544ac",
       "name": "digital_events_batch"
     },
     "datasource": {
-      "id": "d907953b-4a63-42bb-95f2-a4b81686074e",
+      "id": "5bd6e105-86e5-4821-a4b0-181493858db9",
       "name": "digital_events_source"
     }
   },
-  "id": "48549807-c41c-4f5d-ae47-9aab4337b03c",
+  "id": "55e4b032-8689-435b-b477-40844bbd7209",
   "name": "digital_events_validation",
   "suite": {
-    "id": "bb548eb8-52c9-4a4d-89e5-db24666fd2c7",
+    "id": "094cb7c5-2271-4d18-aa24-fc66bad9c3c4",
     "name": "digital_events_suite"
   }
 }

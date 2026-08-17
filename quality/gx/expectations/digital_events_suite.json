@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "ae910e80-afaf-4951-9705-e668283282e8",
+      "id": "0fd18979-9fa4-4bf1-967a-90da0e2332b5",
       "kwargs": {
         "column": "event_id"
       },
@@ -10,7 +10,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "22e06be3-88d3-47bd-97f7-ea9fd48cf721",
+      "id": "fdfd1d36-da85-4c54-8b0e-59d7cccf0fba",
       "kwargs": {
         "column": "event_type",
         "value_set": [
@@ -24,9 +24,9 @@
       "type": "expect_column_distinct_values_to_be_in_set"
     }
   ],
-  "id": "bb548eb8-52c9-4a4d-89e5-db24666fd2c7",
+  "id": "094cb7c5-2271-4d18-aa24-fc66bad9c3c4",
   "meta": {
-    "great_expectations_version": "1.19.1"
+    "great_expectations_version": "1.20.0"
   },
   "name": "digital_events_suite",
   "notes": null
